@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>HDSSS Alumni | Event Details</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet">
+</head>
+
+<body onload="loadEventDetails()">
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img class="brand-logo" src="images/school image.jpg" alt="Logo">
+        HDSSS Alumni
+      </a>
+      <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="menu">
+        <ul class="navbar-nav ms-auto align-items-lg-center mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="directory.html">Directory</a></li>
+          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="events.html">Events</a></li>
+          <li class="nav-item"><a class="nav-link" href="news.html">News</a></li>
+          <li class="nav-item"><a class="nav-link" href="memories.html">Share your Memories</a></li>
+          <li class="nav-item"><a class="nav-link" href="admin.html">Admin Panel</a></li>  
+        </ul>
+        <div id="navUser" class="d-flex ms-lg-3 mt-2 mt-lg-0"></div>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="py-5 mt-5">
+      <div class="container">
+
+        <a href="events.html" class="btn btn-sm btn-outline-secondary mb-3">← Back to Events</a>
+
+        <div class="card-soft" id="eventDetailsBox">
+          <h2 class="section-title text-center mb-2" id="evTitle">Event</h2>
+          <p class="text-secondary text-dark text-left mb-3" id="evDate"></p>
+
+          <p class="section-sub text-dark text-center mb-3" id="evDesc"></p>
+
+          <hr>
+
+          <div class="row g-3">
+            <div class="col-md-6">
+              <div class="card-soft h-100">
+                <h6 class="fw-bold mb-2">📍 Location</h6>
+                <div class="text-secondary" id="evLocation">—</div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="card-soft h-100">
+                <h6 class="fw-bold mb-2">🕒 Time</h6>
+                <div class="text-secondary" id="evTime">—</div>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="card-soft">
+                <h6 class="fw-bold mb-2">📌 Details</h6>
+                <div class="text-secondary" id="evDetails">—</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div>Hat Dariapur Sammainai Secondary School</div>
+      <small>© 2026 Alumni Association. All Rights Reserved.</small>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

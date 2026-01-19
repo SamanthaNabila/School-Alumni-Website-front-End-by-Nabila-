@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>HDSSS Alumni | About</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet">
+</head>
+<body onload="updateNav()">
+  <!-- Navbar -->
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img class="brand-logo" src="images/school image.jpg" alt="Logo">
+        HDSSS Alumni
+      </a>
+      <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="menu">
+        <ul class="navbar-nav ms-auto align-items-lg-center mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="directory.html">Directory</a></li>
+          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="events.html">Events</a></li>
+          <li class="nav-item"><a class="nav-link" href="news.html">News</a></li>
+          <li class="nav-item"><a class="nav-link" href="memories.html">Share your Memories</a></li>
+          <li class="nav-item"><a class="nav-link" href="admin.html">Admin Panel</a></li>  
+        </ul>
+        <div id="navUser" class="d-flex ms-lg-3 mt-2 mt-lg-0"></div>
+      </div>
+    </div>
+  </nav>
+
+  <section class="py-5 mt-5">
+    <div class="container">
+      <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mb-3">
+        <div>
+          <h2 class="section-title mb-1">Share your Memories</h2>
+          <p class="section-sub mb-0">Post your school memories, stories, and moments (front-end demo)</p>
+        </div>
+        <button class="btn btn-sm btn-outline-primary" onclick="renderMemories()">Refresh</button>
+      </div>
+
+      <!-- Login warning -->
+      <div id="memLoginGate" class="alert alert-info d-none">
+        <div class="fw-bold">Login required</div>
+        <div class="small">Please <a href="login.html">login</a> to publish a memory.</div>
+      </div>
+
+      <div class="row g-4">
+        <!-- Form -->
+        <div class="col-lg-5">
+          <div class="card-soft">
+            <h5 class="fw-bold mb-3">Write a Memory</h5>
+
+            <form onsubmit="addMemory(event)">
+              <div class="mb-3">
+                <label class="form-label fw-semibold">Title</label>
+                <input id="memTitle" class="form-control" placeholder="e.g., Our sports day" required>
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label fw-semibold">Year / Batch (optional)</label>
+                <input id="memYear" class="form-control" placeholder="e.g., 2017">
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label fw-semibold">Your Memory</label>
+                <textarea id="memStory" class="form-control" rows="6" placeholder="Write your story..." required></textarea>
+              </div>
+
+              <button class="btn btn-primary w-100" type="submit">Publish</button>
+              <div class="text-secondary small mt-2">
+                Note: This is demo (saved in your browser localStorage).
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <!-- Feed -->
+        <div class="col-lg-7">
+          <div class="card-soft">
+            <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mb-2">
+              <h5 class="fw-bold mb-0">Recent Memories</h5>
+              <input id="memSearch" class="form-control memories-search" placeholder="Search memories...">
+            </div>
+
+            <div id="memList" class="mt-3">
+              <!-- posts render here -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <main>
+    
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div>Hat Dariapur Sammainai Secondary School</div>
+      <small>© 2026 Alumni Association. All Rights Reserved.</small>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

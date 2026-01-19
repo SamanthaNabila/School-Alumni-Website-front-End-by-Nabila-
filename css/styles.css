@@ -1,0 +1,606 @@
+/* FOR HOME PAGE CSS CODE*/
+:root{
+  --brand:#0b3c5d;
+  --accent:#2ecc71;
+}
+html, body {
+  height: 100%;
+}
+main {
+  flex: 1;
+}
+
+
+body{
+  font-family: "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
+  margin:0;
+  padding:0;
+  background-color:#fdfdfd;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Navbar styling */
+.navbar{
+  background:#0B2545;
+  backdrop-filter: blur(10px);
+  padding: .75rem 0;
+}
+.navbar .nav-link{
+  color:#ffffff;
+  font-weight:500;
+  margin-right: .75rem;
+  transition: color .2s ease;
+}
+.navbar .nav-link:hover{
+  color: #38BDF8;
+}
+.navbar-brand{
+  color:#ffffff;
+  font-weight:700;
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+.navbar .btn{
+  margin-left:.5rem;
+}
+.brand-logo{
+  width:40px;
+  height:40px;
+  border-radius:50%;
+  object-fit:cover;
+  border:2px solid rgba(255,255,255,.35);
+}
+
+/* Hero Carousel Background */
+.hero-carousel {
+  position: relative;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Make carousel fill header */
+.hero-carousel .carousel,
+.hero-carousel .carousel-inner,
+.hero-carousel .carousel-item {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  width: 100%;
+}
+
+/* Each slide is a full-cover background */
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transform: scale(1.03);
+}
+
+/* Dark overlay for readability */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 2;
+}
+
+/* Text/content above everything */
+.hero-content {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  padding-top: 90px; /* helps because navbar is fixed-top */
+  padding-bottom: 60px;
+  color: #fff;
+}
+
+/* Keep controls above overlay */
+.hero-carousel .carousel-control-prev,
+.hero-carousel .carousel-control-next {
+  z-index: 4;
+}
+/* Eye-soothing marquee */
+.notice-marquee {
+  background-color: #2f6f6d;   /* soft teal-green */
+  color: #f1f5f9;              /* soft white */
+  padding: 10px 0;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+
+/* About Section*/
+/* About section text styling */
+.section-title {
+  color: #0F3D5E;   /* Deep navy – strong & professional */
+  font-weight: 800;
+  letter-spacing: 0.5px;
+}
+
+.section-sub {
+  color: #475569;   /* Soft slate gray – easy to read */
+  font-size: 17px;
+  line-height: 1.8;
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+
+/* Stat card base style */
+.stat {
+  background: #ffffff;
+  padding: 25px 15px;
+  border-radius: 12px;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+}
+
+/* Hover effect */
+.stat:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
+}
+
+/* Number styling (optional polish) */
+.stat h3 {
+  font-weight: 800;
+  color: #0F3D5E; /* navbar color match */
+  margin-bottom: 5px;
+}
+
+/* Text styling */
+.stat p {
+  margin: 0;
+  color: #64748b;
+  font-weight: 500;
+}
+
+/*Latest Event section */
+.accordion-button {
+  font-weight: 600;
+  color: #0F3D5E;
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: #e6f4ef;
+  color: #14532d;
+}
+
+.accordion-item {
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px color(rgb(219, 237, 245) red green blue) ;
+}
+
+.accordion-body {
+  color: #475569;
+  line-height: 1.6;
+}
+/*Upcoming Events*/
+#eventsListHome .card-soft {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 16px;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+/* Hover state */
+#eventsListHome .card-soft:hover {
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.22);
+  transform: translateY(-4px);
+}
+
+/* Optional: title color polish */
+#eventsListHome .card-soft h5 {
+  color: #0F3D5E;
+}
+
+
+/*Footer Section*/
+
+.cta-section{
+  background: linear-gradient(
+    to bottom,
+    #3a7f7b 0%,
+    #2f6f6d 45%,
+    #0f2f3e 100%     /* footer color exactly */
+  );
+  color: #f1f5f9;
+  margin-bottom: 0 !important;
+  border: 0 !important;
+  box-shadow: none !important; /* shadow থাকলে edge দেখা দিতে পারে */
+}
+.cta-section .btn {
+  background-color: #e6f4f1;
+  color: #243f52;
+  border: none;
+  font-weight: 600;
+  transition: background-color 0.3s ease,
+              color 0.3s ease,
+              box-shadow 0.3s ease;
+}
+
+/* Hover effect */
+.cta-section .btn:hover {
+  background-color: #d1ece7;   /* slightly darker mint */
+  color: #1e3546;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+/* Footer styling */
+.home-page footer{
+  background: #0f2f3e;
+  color: #e2e8f0;
+  padding: 26px 0;
+  text-align: center;
+  margin-top: 0 !important;
+  border: 0 !important;
+  margin-top: auto;
+
+  /* IMPORTANT: 1px overlap removes visible seam on some screens */
+  position: relative;
+  top: -1px;
+}
+ .home-page footer a{
+  color:#dbe7f0;
+  margin:0 .5rem;
+  text-decoration:none;
+}
+.home-page footer a:hover{
+  color: var(--accent);
+}
+/*HOME PAGE CLOSE*/
+
+
+
+
+/* Mobile height */
+@media (max-width: 576px) {
+  .hero-carousel {
+    min-height: 70vh;
+  }
+}
+
+
+/* Section titles */
+.section-title{
+  font-weight:800;
+  color: var(--brand);
+  letter-spacing:.3px;
+}
+.section-sub{
+  color:#6b7280;
+}
+
+/* Soft card styling */
+.card-soft{
+  border:1px solid #eef2f7;
+  border-radius:16px;
+  box-shadow:0 10px 25px rgba(15,23,42,.06);
+  padding:20px;
+  margin-bottom:20px;
+  background-color:#ffffff;
+}
+
+/* Statistic boxes */
+.stat{
+  border-radius:16px;
+  background:#f8fafc;
+  border:1px solid #eef2f7;
+  padding:20px;
+  text-align:center;
+  margin-bottom:20px;
+}
+.stat h3{
+  margin:0;
+  font-weight:900;
+  color:var(--brand);
+}
+.stat p{
+  margin:6px 0 0;
+  color:#6b7280;
+}
+
+
+/* Forms */
+.form-control{
+  margin-bottom:.75rem;
+}
+.alert{
+  color:red;
+  margin-top:.5rem;
+}
+/*FOR ABOUT PAGE CSS CODE */
+.about-section{
+  padding-top: 80px;   /* navbar → title */
+  padding-bottom: 80px;
+}
+
+/* Title spacing */
+.about-title{
+  margin-top: 40px;
+  margin-bottom: 20px; /* title → text */
+}
+.about-title{
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* hover */
+.about-title:hover{
+  transform: translateY(-2px);
+}
+/* About text spacing */
+.about-text{
+  max-width: 850px;
+  margin-bottom: 40px; /* text → cards */
+}
+.about-text{
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* hover */
+.about-text:hover{
+  color: #334155;          /* clearer text */
+  transform: translateY(-2px);
+}
+
+/* Cards wrapper spacing */
+.about-cards{
+  margin-top: 0; /* controlled above */
+}
+/* About page cards hover effect */
+.about-section .card-soft{
+  transition: 
+    box-shadow 0.3s ease,
+    transform 0.3s ease,
+    border-color 0.3s ease;
+  cursor: pointer;
+}
+
+/* Hover state */
+.about-section .card-soft:hover{
+  transform: translateY(-6px);
+  box-shadow: 0 18px 35px rgba(15, 23, 42, 0.18);
+  border-color: aliceblue
+}
+.about-section .card-soft:hover h5{
+  color: var(--accent);
+}
+
+/* ABOUT PAGE CLOSE */
+
+/* GALLERY PAGE CSS CODE */
+.gal-card{
+  border: 1px solid #eef2f7;
+  border-radius: 14px;
+  background: #ffffff;
+  overflow: hidden;
+}
+
+.gal-thumb{
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+  background: #f1f5f9;
+}
+
+.gal-body{
+  padding: 12px;
+}
+
+.gal-title{
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0 0 4px;
+  font-size: 15px;
+}
+
+.gal-meta{
+  font-size: 12px;
+  color: #64748b;
+}
+
+.gal-actions{
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+.gal-preview-wrap{
+  border: 1px dashed #cbd5e1;
+  border-radius: 14px;
+  padding: 10px;
+  background: #f8fafc;
+}
+/* GALLERY PAGE CSS CODE CLOSE */
+/* EVENT PAGE CSS CODE */
+#eventsList .card-soft {
+  height: 100%;
+  transition: 
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+  cursor: pointer;
+  border: 1px solid #e5e7eb;
+}
+
+/* Hover effect */
+#eventsList .card-soft:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.18);
+  border-color:aliceblue; /* brand soothing color */
+}
+
+/* Title polish */
+#eventsList .card-soft h5 {
+  color: #0f3d5e;
+  font-weight: 700;
+}
+
+/* Date text */
+#eventsList .card-soft small {
+  color: #64748b;
+}
+
+/* Description */
+#eventsList .card-soft p {
+  color: white;
+}
+/* Events clickable cards */
+.event-link{
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.event-card{
+  transition: transform .25s ease, box-shadow .25s ease;
+  cursor: pointer;
+}
+
+.event-card:hover{
+  transform: translateY(-6px);
+  box-shadow: 0 18px 35px rgba(0,0,0,.14);
+}
+
+/* EVENT DETAILS PAGE */
+
+#eventDetailsBox .card-soft {
+  transition: 
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+  border: 1px solid #e5e7eb;
+  cursor: default;
+}
+
+/* Hover effect */
+#eventDetailsBox .card-soft:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.15);
+  border-color: aliceblue; /* soothing brand color */
+}
+
+/* Optional: icon/title polish on hover */
+#eventDetailsBox .card-soft:hover h6 {
+  color: aliceblue;
+}
+
+/* NEWS PAGE CSS CODE */
+
+#newsList .card-soft {
+  transition: 
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+  border: 1px solid #e5e7eb;
+  background: rgb(135, 142, 235);
+  cursor: pointer;
+}
+
+/* Hover state */
+#newsList .card-soft:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.14);
+  border-color: aliceblue; /* same soothing brand tone */
+}
+
+/* Title highlight on hover */
+#newsList .card-soft:hover h5 {
+  color: #0f766e;
+}
+
+/* NEWS PAGE CSS CODE CLOSED  */
+/*MEMORIS PAGE CSS CODE */
+/* ===== Memories page extras ===== */
+.memories-search{
+  max-width: 260px;
+}
+
+.memory-card{
+  border: 1px solid #eef2f7;
+  border-radius: 14px;
+  background: #ffffff;
+  padding: 14px;
+  margin-bottom: 12px;
+}
+
+.memory-card .meta{
+  font-size: 12px;
+  color: #64748b;
+}
+
+.memory-card .title{
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 6px;
+}
+
+.memory-card .story{
+  color: #334155;
+  white-space: pre-wrap; /* keeps line breaks */
+}
+
+/*MEMORIS PAGE CSS CODE CLOSED*/
+
+/*ADMIN PANAL CSS CODE */
+/* ===== Admin Panel extras ===== */
+.admin-table th, .admin-table td{
+  vertical-align: middle;
+}
+
+.admin-messages .msg-card{
+  border: 1px solid #eef2f7;
+  border-radius: 14px;
+  background: #ffffff;
+  padding: 12px;
+  margin-bottom: 12px;
+}
+.admin-messages .msg-meta{
+  font-size: 12px;
+  color: #64748b;
+}
+.admin-messages .msg-title{
+  font-weight: 700;
+  color: #0f172a;
+}
+
+
+
+
+/*COMMON FOOTER (All pages except Home) */
+footer{
+  /*background: #0B2545;*/
+  background: linear-gradient(
+    to bottom,
+    #3a7f7b 0%,
+    #2f6f6d 45%,
+    #0f2f3e 100%     /* footer color exactly */
+  );
+  color: #e2e8f0;
+  padding: 26px 0;
+  text-align: center;
+  margin-top: 0 !important;
+  border: 0 !important;
+  margin-top: auto;
+  position: relative;
+  top: -1px;
+}
+ footer a{
+  color:#dbe7f0;
+  margin:0 .5rem;
+  text-decoration:none;
+}
+footer a:hover{
+  color: var(--accent);
+}

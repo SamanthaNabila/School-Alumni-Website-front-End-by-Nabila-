@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>HDSSS Alumni | Gallery</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet">
+</head>
+
+<!-- ✅ IMPORTANT: loadGallery() call -->
+<body onload="loadGallery()">
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img class="brand-logo" src="images/school image.jpg" alt="Logo">
+        HDSSS Alumni
+      </a>
+      <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="menu">
+        <ul class="navbar-nav ms-auto align-items-lg-center mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="directory.html">Directory</a></li>
+          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="events.html">Events</a></li>
+          <li class="nav-item"><a class="nav-link" href="news.html">News</a></li>
+          <li class="nav-item"><a class="nav-link" href="memories.html">Share your Memories</a></li>
+          <li class="nav-item"><a class="nav-link" href="admin.html">Admin Panel</a></li>  
+        </ul>
+        <div id="navUser" class="d-flex ms-lg-3 mt-2 mt-lg-0"></div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Gallery content -->
+  <main>
+    <section class="py-5 mt-5">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mb-3">
+          <div>
+            <h2 class="section-title mb-1 text-center">Gallery</h2>
+            <p class="section-sub mb-0 text-center">
+              Photos & moments from school life (front-end demo)
+            </p>
+          </div>
+
+          <div class="d-flex gap-2 flex-wrap">
+            <button class="btn btn-sm btn-outline-primary" onclick="renderGallery()">Refresh</button>
+            <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#addPhotoModal">
+              Add Photo
+            </button>
+          </div>
+        </div>
+
+        <!-- Login warning -->
+        <div id="galLoginGate" class="alert alert-info d-none">
+          <div class="fw-bold">Login required</div>
+          <div class="small">Please <a href="login.html">login</a> to add photos to the gallery.</div>
+        </div>
+
+        <!-- Filters -->
+        <div class="card-soft mb-4">
+          <div class="row g-3 align-items-end">
+            <div class="col-md-7">
+              <label class="form-label fw-semibold">Search</label>
+              <input id="galSearch" class="form-control" placeholder="Search by title, uploader, category...">
+            </div>
+
+            <div class="col-md-5">
+              <label class="form-label fw-semibold">Category</label>
+              <select id="galCategory" class="form-select">
+                <option value="">All</option>
+                <option>School</option>
+                <option>Sports</option>
+                <option>Reunion</option>
+                <option>Friends</option>
+                <option>Other</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- Grid -->
+        <div id="galleryGrid" class="row g-3"></div>
+      </div>
+    </section>
+
+    <!-- View Modal -->
+    <div class="modal fade" id="viewPhotoModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-body">
+            <div class="d-flex justify-content-between align-items-start gap-2">
+              <div>
+                <h5 class="fw-bold mb-1" id="viewTitle">Photo</h5>
+                <div class="text-secondary small" id="viewMeta"></div>
+              </div>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <img id="viewImg" class="img-fluid rounded mt-3" alt="photo">
+            <div class="text-secondary small mt-2" id="viewCaption"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Add Photo Modal -->
+    <div class="modal fade" id="addPhotoModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <form onsubmit="addGalleryItem(event)">
+            <div class="modal-header">
+              <h5 class="modal-title fw-bold">Add a Photo (Demo)</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+
+            <div class="modal-body">
+              <div class="mb-3">
+                <label class="form-label fw-semibold">Title</label>
+                <input id="galTitle" class="form-control" placeholder="e.g., Annual sports day" required>
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label fw-semibold">Category</label>
+                <select id="galCat" class="form-select">
+                  <option>School</option>
+                  <option>Sports</option>
+                  <option>Reunion</option>
+                  <option>Friends</option>
+                  <option>Other</option>
+                </select>
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label fw-semibold">Caption (optional)</label>
+                <textarea id="galCaption" class="form-control" rows="3" placeholder="Write something..."></textarea>
+              </div>
+
+              <div class="mb-2">
+                <label class="form-label fw-semibold">Photo</label>
+                <input id="galFile" type="file" class="form-control" accept="image/*" required>
+                <div class="form-text">Saved in your browser (localStorage). Large images may not fit.</div>
+              </div>
+
+              <div class="gal-preview-wrap mt-3 d-none" id="galPreviewWrap">
+                <div class="text-secondary small mb-2">Preview</div>
+                <img id="galPreview" class="img-fluid rounded" alt="preview">
+              </div>
+            </div>
+
+            <div class="modal-footer">
+              <button class="btn btn-outline-secondary" type="button" data-bs-dismiss="modal">Cancel</button>
+              <button class="btn btn-primary" type="submit">Save</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div>Hat Dariapur Sammainai Secondary School</div>
+      <small>© 2026 Alumni Association. All Rights Reserved.</small>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

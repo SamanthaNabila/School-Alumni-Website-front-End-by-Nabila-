@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>HDSSS Alumni | Home</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet">
+</head>
+<body class="home-page" onload="updateNav()">
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img class="brand-logo" src="images/school image.jpg" alt="Logo">
+        HDSSS Alumni
+      </a>
+      <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="menu">
+        <ul class="navbar-nav ms-auto align-items-lg-center mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="directory.html">Directory</a></li>
+          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="events.html">Events</a></li>
+          <li class="nav-item"><a class="nav-link" href="news.html">News</a></li>
+          <li class="nav-item"><a class="nav-link" href="memories.html">Share your Memories</a></li>
+          <li class="nav-item"><a class="nav-link" href="admin.html">Admin Panel</a></li>  
+        </ul>
+        <div id="navUser" class="d-flex ms-lg-3 mt-2 mt-lg-0"></div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <!-- Hero Section (Carousel Background) -->
+<header class="hero hero-carousel">
+  <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="3500">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <div class="hero-slide" style="background-image: url('images/alumnai.jpeg');"></div>
+      </div>
+      <div class="carousel-item">
+        <div class="hero-slide" style="background-image: url('images/Foyjur Rahman Sir.png');"></div>
+      </div>
+      <div class="carousel-item">
+        <div class="hero-slide" style="background-image: url('images/school pic.jpeg');"></div>
+      </div>
+    </div>
+
+    <!-- Optional controls -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev" aria-label="Previous">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next" aria-label="Next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    </button>
+  </div>
+
+  <!-- Dark overlay -->
+  <div class="hero-overlay"></div>
+
+  <!-- Foreground content (always visible) -->
+  <div class="hero-content">
+    <div class="container text-center">
+      <h1 class="display-5 fw-bold">Hat Dariapur Sammilani Secondary School Alumni</h1>
+      <p class="lead">Reconnect with batchmates, share memories and contribute.</p>
+      <div class="d-flex gap-2 justify-content-center mt-3">
+        <a href="register.html" class="btn btn-success px-4 fw-semibold">Register</a>
+        <a href="login.html" class="btn btn-outline-light px-4 fw-semibold">Login</a>
+      </div>
+    </div>
+  </div>
+</header>
+<!-- Notice Marquee -->
+<div>
+  <marquee class="notice-marquee" scrollamount="6">
+  Here you will find notices of upcoming events, or important news.
+</marquee>
+
+</div>
+
+
+
+  <!-- About Section -->
+  <section class="py-5">
+    <div class="container text-center">
+      <h2 class="section-title mb-3">About Our School</h2>
+      <p class="section-sub text-dark">
+        Hat Dariapur Sammilani Secondary School is committed to academic excellence,
+        moral values, and building a strong alumni network that connects generations.
+      </p>
+    </div>
+  </section>
+
+  <!-- Statistics -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <div class="row">
+        <div class="col-6 col-md-3"><div class="stat"><h3>5000+</h3><p>Total Alumni</p></div></div>
+        <div class="col-6 col-md-3"><div class="stat"><h3>58+</h3><p>Batches</p></div></div>
+        <div class="col-6 col-md-3"><div class="stat"><h3>40+</h3><p>Events</p></div></div>
+        <div class="col-6 col-md-3"><div class="stat"><h3>100+</h3><p>Achievements</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Notices & Events -->
+  <section class="py-5">
+  <div class="container">
+    <div class="row">
+      <!-- Latest Notices -->
+      <div class="col-lg-6 mb-4 mb-lg-0">
+        <h4 class="section-title mb-3">Latest Notices</h4>
+
+        <div class="accordion" id="noticeAccordion">
+
+          <!-- Notice 1 -->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="noticeOne">
+              <button class="accordion-button collapsed" type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#noticeCollapseOne"
+                aria-expanded="false"
+                aria-controls="noticeCollapseOne">
+                📢 Alumni Registration Open
+              </button>
+            </h2>
+            <div id="noticeCollapseOne"
+              class="accordion-collapse collapse"
+              aria-labelledby="noticeOne"
+              data-bs-parent="#noticeAccordion">
+              <div class="accordion-body">
+                <strong>Registration is now open!</strong><br>
+                Alumni can register online to join the official HDSSS Alumni network.
+                Please complete your profile with correct batch and contact details.
+                <br><br>
+                <a href="register.html" class="btn btn-sm btn-success">Register Now</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Notice 2 -->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="noticeTwo">
+              <button class="accordion-button collapsed" type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#noticeCollapseTwo"
+                aria-expanded="false"
+                aria-controls="noticeCollapseTwo">
+                🎉 Annual Reunion 2026
+              </button>
+            </h2>
+            <div id="noticeCollapseTwo"
+              class="accordion-collapse collapse"
+              aria-labelledby="noticeTwo"
+              data-bs-parent="#noticeAccordion">
+              <div class="accordion-body">
+                <strong>Annual Alumni Reunion 2026</strong><br>
+                Date: March 2026<br>
+                Venue: School Campus<br><br>
+                All alumni are cordially invited to participate and reconnect with friends.
+              </div>
+            </div>
+          </div>
+
+          <!-- Notice 3 -->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="noticeThree">
+              <button class="accordion-button collapsed" type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#noticeCollapseThree"
+                aria-expanded="false"
+                aria-controls="noticeCollapseThree">
+                🎓 Scholarship Program
+              </button>
+            </h2>
+            <div id="noticeCollapseThree"
+              class="accordion-collapse collapse"
+              aria-labelledby="noticeThree"
+              data-bs-parent="#noticeAccordion">
+              <div class="accordion-body">
+                <strong>Scholarship Program for Students</strong><br>
+                Talented and financially challenged students can apply for this scholarship.
+                Application details will be published soon.
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Upcoming Events -->
+      <div class="col-lg-6">
+        <h4 class="section-title mb-3">Upcoming Events</h4>
+        <div id="eventsListHome" class="row g-3"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+  <!-- Call to Action -->
+  <section class="py-5 text-center cta-section">
+  <div class="container">
+    <h2>Join Our Alumni Community</h2>
+    <p>Stay connected with your school and batchmates</p>
+    <a href="register.html" class="btn px-4">Register Now</a>
+  </div>
+</section>
+
+
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div>Hat Dariapur Sammainai Secondary School</div>
+      <small>© 2026 Alumni Association. All Rights Reserved.</small>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/script.js"></script>
+  <script>
+    // Populate mini events list on the home page
+    const homeContainer = document.getElementById('eventsListHome');
+    if(homeContainer){
+      const count = Math.min(2, eventsData.length);
+      for(let i=0; i<count; i++){
+        const ev = eventsData[i];
+        const col = document.createElement('div');
+        col.className = 'col-12';
+        col.innerHTML = `
+          <div class="card-soft h-100">
+            <h5 class="fw-bold">${ev.title}</h5>
+            <small class="text-secondary">${ev.date}</small>
+            <p class="text-secondary mb-0">${ev.description}</p>
+          </div>
+        `;
+        homeContainer.appendChild(col);
+      }
+    }
+  </script>
+</body>
+</html>
